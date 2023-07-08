@@ -5,9 +5,9 @@ const app = express();
 
 // Create a connection pool
 const pool = mysql.createPool({
-  host: 'mysql', // Use the service name of the MySQL container in Docker Compose
-  user: 'app_user',
-  password: 'app_password',
+  host: 'mysql-container', // Use the service name of the MySQL container in Docker Compose
+  user: 'mayur',
+  password: 'mayur',
   database: 'login_registration',
   waitForConnections: true,
   connectionLimit: 10,
@@ -28,6 +28,6 @@ app.get('/', (req, res) => {
   res.send('Backend is working!');
 });
 
-app.listen(3000, () => {
-  console.log('Backend server is running on port 3000');
+app.listen(8080, () => {
+  console.log('Backend server is running on port 8080');
 });
